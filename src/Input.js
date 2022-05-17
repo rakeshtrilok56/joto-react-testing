@@ -1,7 +1,12 @@
-import React,{useState} from 'react'
+import React from 'react'
 
-let Input= ({secretWord})=>{
-    let [currentGuessWord, setCurrentGuessWord]= useState('')
+let Input= ({success,secretWord})=>{
+    let [currentGuessWord, setCurrentGuessWord]= React.useState('')
+    if(success){
+        return (
+            <div data-test='component-input'></div>
+        )
+    }
     return (
         <form className='component-input' data-test='component-input'>
         <input 
@@ -15,7 +20,8 @@ let Input= ({secretWord})=>{
         
         >
         </input>
-        <button id='submit' onClick={(event)=>event.preventDefault()}>Submit</button>
+        <button id='submit' data-test="submit" onClick={(event)=>{event.preventDefault();
+        setCurrentGuessWord("")}}>Submit</button>
         </form>
     )
 }
