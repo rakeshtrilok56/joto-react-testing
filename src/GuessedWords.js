@@ -18,7 +18,7 @@ const GuessedWords=(props)=>{
                 <tbody>
                 {props.guessedWords.map((obj,index)=>{
                     return (
-                        <tr key={index} data-test='guessed-word'><td>{obj.guessedWord}</td><td>{obj.matchingLetterLength}</td></tr>
+                        <tr key={index} data-test='guessed-word'><td>{obj.guessedWord}</td><td>{obj.matchLetterCount}</td></tr>
                     )
             })}
                 </tbody>
@@ -33,7 +33,7 @@ const GuessedWords=(props)=>{
 }
 GuessedWords.propTypes={
 guessedWords:PropTypes.arrayOf(PropTypes.shape({guessedWord:PropTypes.string.isRequired,
-    matchingLetterLength:PropTypes.number.isRequired
+    matchLetterCount:PropTypes.number.isRequired
 })).isRequired
 }
 export default GuessedWords

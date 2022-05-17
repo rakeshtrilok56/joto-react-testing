@@ -3,7 +3,7 @@ import './setupTests'
 import {shallow} from 'enzyme'
 import GuessedWords from './GuessedWords'
 import {findByTestAttr} from './test/testutils'
-let defaultProps={guessedWords:[{guessedWord:'track',matchingLetterLength:2}]}
+let defaultProps={guessedWords:[{guessedWord:'track',matchLetterCount:2}]}
 const setup=(props={})=>{
     let setUpProps={...defaultProps,...props}
     return shallow(<GuessedWords {...setUpProps}/>)
@@ -31,7 +31,7 @@ describe('testing when the length of guessed words is greater than zero',()=>{
 let wrapper;
 let testProps={guessedWords:[{
     guessedWord: 'rain',
-    matchingLetterLength:2
+    matchLetterCount:2
 }]}
 beforeEach(()=>{
     wrapper=setup(testProps)
