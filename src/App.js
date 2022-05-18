@@ -1,11 +1,16 @@
 import React from 'react'
 import Congrats from './congrats'
 import GuessedWords from './GuessedWords'
+import Input from './Input'
 const App=()=>{
-    return (<div className='container joto-container'>
+    let success=false;
+    let guessedWords=[];
+    let secretWord="party"
+    return (<div className='container joto-container' data-test="joto-container">
             <h1>Joto App</h1>
-            <Congrats success={true}/>
-            <GuessedWords guessedWords={[{guessedWord:'train',matchLetterCount:3}]}/>
+            <Input success={success} secretWord={secretWord}/>
+            <Congrats success={success}/>
+            <GuessedWords guessedWords={guessedWords}/>
         </div>)
 }
 export default App
