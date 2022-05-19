@@ -14,7 +14,7 @@ const setup=(state={})=>{
     submitBtn.simulate('click',{preventDefault(){}})
     return wrapper
 }
-describe('render',()=>{
+describe.skip('render',()=>{
 let wrapper;
     test('No Words guessed',()=>{
         wrapper= setup({
